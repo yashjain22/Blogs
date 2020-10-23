@@ -12,5 +12,5 @@ class CreateUserForm(UserCreationForm):
 class BlogForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title','body']
+        fields = ['title','title_tag','body']
         exclude = ['author','created_on','updated_on']

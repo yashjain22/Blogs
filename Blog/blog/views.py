@@ -2,10 +2,6 @@ from django.shortcuts import render
 from .forms import CreateUserForm,BlogForm
 from .models import Post
 from django.contrib.auth.models import User
-# Create your views here.
-#from rest_framework import viewsets
-
-
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
 from rest_framework import status
@@ -13,9 +9,6 @@ from django.contrib.auth.forms import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
- 
-#from tutorials.models import Tutorial
-#from tutorials.serializers import TutorialSerializer
 from rest_framework.decorators import api_view
 from django.utils import timezone
 from django.core.serializers import serialize
@@ -64,13 +57,13 @@ def create_post(request):
             instance.created_on = timezone.now()
             instance.updated_on = timezone.now()
             instance.save()
-            print("post saved")
             return JsonResponse({'message' : 'Post successfully created'}, status = status.HTTP_200_OK)
+        else:
+            print("hellasadadsadadadaddaadda")
     return JsonResponse({'message' : 'Invalid request'}, status = status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
 def fetch_all_posts(request,orderbydate=0):
-    print(request.headers)
     if request.method == 'GET':
         try:
             orderbydate = int(request.GET.get("orderbydate"))
