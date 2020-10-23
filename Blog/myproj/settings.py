@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'myproj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Blogs',
+        'NAME': 'mydatabase',
         'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',
-        'PORT': '56643',
+        'PORT': '5432',
     }
 }
 

@@ -19,11 +19,13 @@ import os
 import sys
 sys.path.append("..")
 from blog import views
-#from myproj.blog import views
 urlpatterns = [
+    path('',views.register_user),
     path('admin/', admin.site.urls),
-    path('api/blog/register', views.registerUser),
-    path('api/blog/login', views.loginUser),
-    path('api/blog/logout', views.logoutUser),
-    path('api/blog/createpost',views.createPost)
+    path('api/blog/register', views.register_user),
+    path('api/blog/login', views.login_user),
+    path('api/blog/logout', views.logout_user),
+    path('api/blog/createpost',views.create_post),
+    path('api/blog/fetchpostbyid',views.fetch_post_by_id),
+    path('api/blog/fetchallpost',views.fetch_all_posts),
 ]
