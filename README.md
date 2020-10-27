@@ -10,7 +10,7 @@
 1. setup virtualenv by running venv [env_name] in project dir
 2. activate virtual env by navigating to [env_name]/Scripts and run activate.bat
 3. after virtual env is activated install the required dependencies by running `pip install -r      requirements.txt` in project_dir
-4. navigate to Blogs\Blog\myproj\settings.py and change database settings to appropriate user,password,host and port
+4. navigate to Blogs\Blog\myproj\settings.py and change database settings to appropriate user,password,host and port,add secret key
 5. create migrations by `python manage.py makemgrations`
 6. apply migrations by `python manage.py migrate`
 7. runserver using `python manage.py runserver`
